@@ -1,13 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const Book = require("../model/book");
+const booksController = require("../controllers/books-controller");
 
+router.get("/", booksController.getAllBooks);
+router.post("/", booksController.addBook);
+router.get("/", )
 
-router.get("/", async (req, res, next) => {
-let books;
-  try {
-    books = await Book.find();
-  } catch(err) {
-    console.log(err)
-  }
-});
+module.exports = router;
