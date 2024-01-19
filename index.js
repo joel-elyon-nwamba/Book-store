@@ -40,7 +40,16 @@ app.post("/books", async (request, response) => {
       response.status(500).send({ message: error.message });
     }
 })
-
+// Route for get all books from database
+app.get("/books", async (request, response) => {
+  try {
+    const books = await BookModels.find({});
+    return response.status(200).json(books);
+  } catch(error) {
+    console.log(error.message);
+    response.status(500).send({ message: error.message });
+  }
+})
 // VEDZYkIoXlXzM1x3
 
 mongoose.connect(MONGODBURI).then(() => {
