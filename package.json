@@ -1,7 +1,18 @@
 {
+  "name": "book-store",
+  "version": "1.0.0",
+  "description": "* As a user, I should be able to browse through a wide variety of books categorized by genre, author, and other relevant criteria.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
-    "init": "^0.1.2",
     "mongoose": "^8.1.0",
     "nodemon": "^3.0.3"
   }
