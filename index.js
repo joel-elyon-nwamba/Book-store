@@ -52,8 +52,58 @@ app.get("/books", async (request, response) => {
     console.log(error.message);
     response.status(500).send({ message: error.message });
   }
-})
+});
 // VEDZYkIoXlXzM1x3
+// Get one book from the database by id
+app.get("/books/:id", async (request, response) => {
+  try {
+
+    const { id } = request.params;
+
+    const book = await BookModels.findById(id);
+
+    return response.status(200).json(book);
+  } catch(error) {
+    console.log(error.message);
+    response.status(500).send({ message: error.message });
+  }
+});
+
+// Update a book so route to an update
+app.put("/books/:id", async (request, response) => {
+  try {
+
+    if(
+      !request.body.title ||
+      !request.body.author ||
+      !request.body.publishedYear
+    ) {
+      return response.status(400).send({
+        message: "Send all required fields: title, author, publishedYear"
+      });
+    }
+      const { id } =  request.params;
+      const result = await BookModels.findByIdAndUpdate(id, request.body);
+
+      if(!result) {
+        return response.status(404).json({ message: "Book not found" });
+      }
+      return response.status(200).send({ message: "Book updated successfully" });
+  } catch(error) {
+    console.log(error.message);
+    response.status(500).send({ message: error.message });
+  }
+});
+
+// Delete a book with mongoose
+app.delete("/books/:id", async (request, response) => {
+  try {
+
+  } catch(error) {
+    console.log(error.message);
+    response.status(500).send({ message: error.message });
+  }
+})
 
 mongoose.connect(MONGODBURI).then(() => {
   console.log(`App connected to database`)
