@@ -4,7 +4,6 @@ import CreateBooks from "./Pages/CreateBooks";
 import DeleteBook from "./Pages/DeleteBooks";
 import EditBook from "./Pages/EditBook";
 import ShowBooks from "./Pages/ShowBooks";
-import './App.css'
 
 function App() {
 
