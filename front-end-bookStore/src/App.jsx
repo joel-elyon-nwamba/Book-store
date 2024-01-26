@@ -1,22 +1,11 @@
 import {Routes, Route} from "react-router-dom";
-import Home from "./Pages/Home";
-import CreateBooks from "./Pages/CreateBooks";
-import DeleteBooks from "./Pages/DeleteBooks";
-import EditBook from "./Pages/EditBook";
-import ShowBooks from "./Pages/ShowBooks";
+import Header from "./Compoenent/Header";
 
 function App() {
 
 
   return (
-
-    <Routes>
-      <Route path = "/" element= {<Home />}/>
-      <Route path = "/books/create" element= {<CreateBooks />}/>
-      <Route path = "/books/details/:id" element= {<ShowBooks />}/>
-      <Route path = "/books/edit/:id" element= {<EditBook />}/>
-      <Route path = "/books/delete/:id" element= { <DeleteBooks />}/>
-    </Routes>
+      <Header />
   )
 }
 
