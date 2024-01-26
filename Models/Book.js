@@ -16,15 +16,13 @@ const bookSchema = mongoose.Schema({
 
   price: {
     type: Number,
-    required: true
+    required: true,
   },
 
   available: {
-    type: String,
-    required: true
+    type: Boolean,
   }
 });
 
 
- const Cat = mongoose.model("Cat",bookSchema);
- module.exports = Cat
+module.exports = mongoose.model("Book",bookSchema);
