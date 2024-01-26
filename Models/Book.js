@@ -21,6 +21,11 @@ const bookSchema = mongoose.Schema({
 
   available: {
     type: Boolean,
+  },
+
+  image: {
+    type: String,
+    required: true
   }
 });
 
