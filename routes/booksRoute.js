@@ -2,7 +2,7 @@ const express = require("express");
 
 const router = express.Router();
 
-const Book = require("../Mod../Models/Book");
+const Book = require("../Models/Book");
 
 const booksController = require("../controllers/books-controller");
 

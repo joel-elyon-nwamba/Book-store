@@ -12,7 +12,7 @@ function Header() {
         <Tabs sx={{ml: "auto"}} textColor="inherit" indicatorColor="secondary" value={value} onChange={(e, val) => setValue(val)}>
           <Tab LinkComponent={NavLink} to= "/add" label = "Product Add"/>
           <Tab LinkComponent = {NavLink} to= "/books" label = "Books"/>
-          <Tab LinkComponent={NavLink} to="/about" label = "Product Add"/>
+          <Tab LinkComponent={NavLink} to="/about" label = " About the Product"/>
         </Tabs>
         </Toolbar>
       </AppBar>

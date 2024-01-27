@@ -7,25 +7,18 @@ const MONGODBURI = "mongodb+srv://joelnwamba:VEDZYkIoXlXzM1x3@book-store-mern.1a
 
 // const { PORT,  mongoDBURL} = require("./config.js")
 
-const booksRoute = require("./routes/booksRoute");
-
-// middleware
-app.use(express.json())
-app.use("/books", booksRoute);
+// Use cors middleware before defining routes
 app.use(cors());
 
-// app.use(cors({
-//   origin: "http://localhost:8000",
-//   methods: ["GET", "POST", "PUT", "DELETE"],
-//   allowedHeaders: ["Content-Type"],
-// }));
+// middleware
+app.use(express.json());
+const booksRoute = require("./routes/booksRoute");
+app.use("/books", booksRoute);
 
 app.get("/", (request, response) => {
   console.log(request);
   return response.status(234).send("Welcome To Book Store");
 });
-
-
 
 mongoose.connect(MONGODBURI).then(() => {
   console.log(`App connected to database`)
